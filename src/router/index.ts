@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import SingleMovie from "~/pages/SingleMovie.vue";
-import Movies from "~/pages/Movies.vue";
+import SingleMovie from "~/pages/SingleMoviePage.vue";
+import Movies from "~/pages/MoviesPage.vue";
 
 const routes:  RouteRecordRaw[] = [
     { path: '/movies', component: Movies, name: 'movies' },

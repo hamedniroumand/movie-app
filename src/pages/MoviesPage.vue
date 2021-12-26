@@ -1,5 +1,7 @@
 <template>
-  <p>Movies</p>
+  <div class="container">
+    <p>Main Container</p>
+  </div>
 </template>
 
 <script>
