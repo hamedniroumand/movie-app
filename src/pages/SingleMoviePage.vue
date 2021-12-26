@@ -1,11 +1,22 @@
 <template>
-  <p>Single Movie</p>
+  <movie-layout>
+    <template #header-bar>
+      <p>Single Movie Header Bar Content</p>
+    </template>
+    <div class="container">
+      <p>Single Main Content</p>
+    </div>
+  </movie-layout>
 </template>
 
 <script>
 import { defineComponent } from 'vue';
-export default defineComponent({
+import MovieLayout from "~/layouts/MovieLayout.vue";
 
+export default defineComponent({
+  components: {
+    MovieLayout
+  }
 })
 </script>
 

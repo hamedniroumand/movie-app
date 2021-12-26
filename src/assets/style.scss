@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 16px;
+}
+
+.top-nav {
+  @apply bg-emerald-500;
+  height: 48px;
+}
+
 .container {
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  max-width: 1288px;
+  max-width: 1024px;
   width: 100%;
 }
