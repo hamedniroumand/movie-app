@@ -9,7 +9,7 @@
   </movie-layout>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue';
 import MovieLayout from "~/layouts/MovieLayout.vue";
 
