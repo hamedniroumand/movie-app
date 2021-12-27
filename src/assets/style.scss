@@ -7,6 +7,10 @@ html {
   @apply text-gray-500;
 }
 
+select:focus-visible {
+  outline: 0;
+}
+
 img {
   object-fit: cover;
 }

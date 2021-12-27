@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-neutral-300 my-16 py-6 px-20 rounded-lg">
+  <div class="bg-neutral-300 my-16 py-4 xl:px-20 md:px-10 sm:px-5 rounded-lg">
     <slot />
   </div>
 </template>
