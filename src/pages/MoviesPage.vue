@@ -35,7 +35,7 @@ export default defineComponent({
   data: () => ({
     movies: [] as Movie[],
     genres: [] as Genres[],
-    totalPages: null as number | null,
+    totalPages: 1 as number,
     currentPage: 1 as number,
   }),
   async created() {
