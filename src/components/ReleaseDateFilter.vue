@@ -22,11 +22,11 @@ import {defineComponent} from 'vue';
 export default defineComponent({
   props: {
     startYearValue: {
-      type: String,
+      type: Number,
       default: 0,
     },
     endYearValue: {
-      type: String,
+      type: Number,
       default: 0,
     },
   },

@@ -10,7 +10,7 @@
         </template>
       </div>
     </div>
-    <pagination v-if="movies.length" :current-page="currentPage" :total-pages="totalPages" @set-next-page="goNextPage" @set-prev-page="goPrevPage" />
+    <page-pagination v-if="movies.length" :current-page="currentPage" :total-pages="totalPages" @set-next-page="goNextPage" @set-prev-page="goPrevPage" />
   </movie-layout>
 </template>
 
@@ -22,13 +22,13 @@ import httpService from "../services/HttpService";
 import {PaginatedData} from "../models/PaginatedData";
 import {Movie} from "../models/Movie";
 import {Genres} from "../models/Genres";
-import Pagination from "../components/Pagination.vue";
+import PagePagination from "../components/PagePagination.vue";
 import ReleaseDateFilter from "../components/ReleaseDateFilter.vue";
 
 export default defineComponent({
   components: {
     ReleaseDateFilter,
-    Pagination,
+    PagePagination,
     MovieLayout,
     MovieCard
   },
