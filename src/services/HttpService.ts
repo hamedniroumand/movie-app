@@ -1,4 +1,4 @@
-import axios, {AxiosInstance} from "axios";
+import axios, {AxiosInstance, AxiosRequestConfig} from "axios";
 
 class HttpService {
     private http: AxiosInstance;
@@ -11,8 +11,11 @@ class HttpService {
         });
     }
 
-    public get(path: string) {
-        return this.http.get(`${path}?api_key=${this.apiKey}`)
+    public get(path: string, config?: AxiosRequestConfig) {
+        return this.http.get(path, {
+            ...config,
+            params: { ...config?.params, api_key: this.apiKey }
+        });
     }
 
 }
