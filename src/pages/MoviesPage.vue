@@ -63,6 +63,7 @@ export default defineComponent({
   methods: {
     async fetchMovies(queries: any) {
       try {
+        await this.$store.dispatch('changeLoadingState', true);
         const { data } = await httpService.get('/discover/movie', {
           params: queries
         });
@@ -71,6 +72,7 @@ export default defineComponent({
         this.totalPages = paginatedData.total_pages;
         this.currentPage = paginatedData.page;
         window.scrollTo(0,0);
+        await this.$store.dispatch('changeLoadingState', false);
       } catch (err) {
         console.error(err);
         alert('Somethings went wrong in fetching movies');

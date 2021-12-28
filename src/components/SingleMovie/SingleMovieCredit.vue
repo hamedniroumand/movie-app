@@ -1,6 +1,6 @@
 <template>
   <div class="mt-14 text-black">
-    <h4 class="font-medium">Credit:</h4>
+    <h4 class="font-bold">Credit:</h4>
     <p>{{ casts }}</p>
   </div>
 </template>

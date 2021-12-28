@@ -1,7 +1,9 @@
 export default {
     methods: {
-        getImageUrl(path: string, size: 'original' | string = 'w500') {
-            return `https://image.tmdb.org/t/p/${size}/${path}`;
+        getImageUrl(path: string | undefined, size: 'original' | string = 'w500') {
+            if (path) {
+                return `https://image.tmdb.org/t/p/${size}/${path}`;
+            }
         },
         priceFormat(price: string | number) {
             return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(+price);

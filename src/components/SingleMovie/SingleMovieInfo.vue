@@ -1,9 +1,9 @@
 <template>
-  <div class="flex mb-14">
-    <div class="w-1/3">
+  <div class="flex flex-col sm:flex-row mb-14">
+    <div class="w-full xl:w-1/3 md:w-1/2 sm:w-full">
       <img :src="getImageUrl(movie.poster_path)" class="w-full rounded-xl" :alt="movie.title">
     </div>
-    <div class="w-2/3 xl:pl-14">
+    <div class="w-full xl:w-2/3 md:w-1/2 sm:w-full sm:pl-14">
       <ul class="mt-6">
         <li v-if="movie.budget" class="text-black flex justify-between mb-6 last:mb-0">
           <p class="font-medium">Budget</p>

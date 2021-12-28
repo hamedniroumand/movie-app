@@ -6,6 +6,7 @@ import {GenresResponse} from "../definations/interfaces";
 
 export interface State {
     genres: Genres[],
+    loading: boolean,
 }
 
 export const key: InjectionKey<Store<State>> = Symbol()
@@ -13,11 +14,16 @@ export const key: InjectionKey<Store<State>> = Symbol()
 export const store = createStore<State>({
     state: {
         genres: [],
+        loading: false,
     },
     getters: {
         genres: state => state.genres,
+        loading: state => state.loading,
     },
     actions: {
+        changeLoadingState({ commit }, state: boolean) {
+            commit('CHANGE_LOADING_STATE', state)
+        },
         async initialGenres({ commit, state }) {
             if (state.genres.length) {
                 return state.genres;
@@ -32,11 +38,14 @@ export const store = createStore<State>({
         }
     },
     mutations: {
-        SET_GENRES(state, payload: Genres[]) {
-            state.genres = payload;
+        CHANGE_LOADING_STATE(store, state) {
+            store.loading = state;
         },
-        FIND_GENRE(state, payload: number) {
-            return state.genres.find(g => g.id === payload);
+        SET_GENRES(store, payload: Genres[]) {
+            store.genres = payload;
+        },
+        FIND_GENRE(store, payload: number) {
+            return store.genres.find(g => g.id === payload);
         }
     }
 })

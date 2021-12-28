@@ -42,11 +42,13 @@ export default defineComponent({
       alert('page not found');
     }
     try {
+      await this.$store.dispatch('changeLoadingState', true);
       const moviesData = await HttpService.get(`/movie/${movieId}`);
       const creditsResponse = await HttpService.get(`/movie/${movieId}/credits`);
       this.movie = moviesData.data;
       this.casts = creditsResponse.data.cast;
       document.title = this.movie.title;
+      await this.$store.dispatch('changeLoadingState', false);
     } catch (err) {
       console.error(err);
       alert('Somethings went wrong in fetching movie data');
@@ -54,6 +56,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style lang="postcss" scoped>
-</style>
