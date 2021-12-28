@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HeaderBar from "@/HeaderBar.vue";
+import HeaderBar from "@/Shared/HeaderBar.vue";
 
 export default defineComponent({
   components: {

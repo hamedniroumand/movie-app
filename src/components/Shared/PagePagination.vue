@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import {defineComponent, PropType} from 'vue';
+
 export default defineComponent({
   props: {
     currentPage: {
@@ -34,7 +35,3 @@ export default defineComponent({
   }
 })
 </script>
-
-<style scoped>
-
-</style>

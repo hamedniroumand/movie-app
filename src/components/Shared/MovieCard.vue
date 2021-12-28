@@ -27,9 +27,9 @@
 
 <script lang="ts">
 import {defineComponent, PropType} from 'vue';
-import {Movie} from "../models/Movie";
-import CommonMixin from "../mixins/CommonMixin";
-import {Genres} from "../models/Genres";
+import { Movie } from "../../models/Movie";
+import CommonMixin from "../../mixins/CommonMixin";
+import { Genres } from "../../models/Genres";
 
 export default defineComponent({
   mixins: [CommonMixin],

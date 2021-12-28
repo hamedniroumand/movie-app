@@ -17,13 +17,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import MovieLayout from "~/layouts/MovieLayout.vue";
-import MovieCard from '@/MovieCard.vue';
+import MovieCard from '@/Shared/MovieCard.vue';
+import PagePagination from "@/Shared/PagePagination.vue";
+import ReleaseDateFilter from "@/Home/ReleaseDateFilter.vue";
 import httpService from "../services/HttpService";
-import {PaginatedData} from "../models/PaginatedData";
-import {Movie} from "../models/Movie";
-import {Genres} from "../models/Genres";
-import PagePagination from "../components/PagePagination.vue";
-import ReleaseDateFilter from "../components/ReleaseDateFilter.vue";
+import { PaginatedData } from "../models/PaginatedData";
+import { Movie } from "../models/Movie";
+import { Genres } from "../models/Genres";
 
 export default defineComponent({
   components: {
@@ -50,6 +50,7 @@ export default defineComponent({
   },
   async created() {
     try {
+      document.title = 'Movie App'
       await this.$store.dispatch('initialGenres');
       const currentPage = this.$route.query.page;
       this.currentPage = currentPage ? +currentPage : 1;
