@@ -2,11 +2,11 @@
   <div class="flex flex-col md:flex-row justify-between items-center md:gap-0 gap-4">
     <div class="flex flex-col md:flex-row justify-between items-center md:gap-0 gap-4">
       <p class="text-black">Search by release date:</p>
-      <select class="xl:mx-10 md:mx-6 px-3 py-1" v-model="startYear">
+      <select class="xl:mx-10 bg-white md:mx-6 px-3 py-1" v-model="startYear">
         <option value="0">Start Year (All)</option>
         <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
       </select>
-      <select class="px-3 py-1" v-model="endYear">
+      <select class="px-3 bg-white py-1" v-model="endYear">
         <option value="0">End Year (All)</option>
         <option v-for="year in years" :key="year" :value="year">{{ year }}</option>
       </select>

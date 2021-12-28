@@ -38,6 +38,16 @@ export default defineComponent({
     totalPages: 1 as number,
     currentPage: 1 as number,
   }),
+  computed: {
+    startYear() {
+      const startYear = this.$route.query['primary_release_date.gte'];
+      return startYear ? +startYear : null;
+    },
+    endYear() {
+      const endYear = this.$route.query['primary_release_date.lte'];
+      return endYear ? +endYear : null;
+    },
+  },
   async created() {
     try {
       await this.$store.dispatch('initialGenres');
@@ -48,14 +58,6 @@ export default defineComponent({
       console.error(err);
       alert('Somethings went wrong in fetching genres');
     }
-  },
-  computed: {
-    startYear() {
-      return this.$route.query['primary_release_date.gte'] as string ?? null;
-    },
-    endYear() {
-      return this.$route.query['primary_release_date.lte'] as string ?? null;
-    },
   },
   methods: {
     async fetchMovies(queries: any) {
@@ -78,6 +80,9 @@ export default defineComponent({
       await this.$router.push({ query: { ...this.$route.query, page: this.currentPage } })
     },
     async goPrevPage() {
+      if (this.currentPage === 1) {
+        return;
+      }
       this.currentPage--;
       await this.$router.push({ query: { ...this.$route.query, page: this.currentPage } })
     },
